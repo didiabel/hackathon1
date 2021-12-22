@@ -10,9 +10,13 @@ class Tarea {
     this.nombre= nombre
     this.prioridad= prioridad
     }
-    agregarTarea(array,tarea){
-        array.push(tarea)
+    agregarTarea(array){
+        array.push(this)
     }
+    //forma que me parecio mas simple (Didi):
+    // agregarTarea(array,tarea){
+    //     array.push(tarea)
+    // }
 }
 function mostrarLista(){
     ul.innerHTML = ""
@@ -23,7 +27,11 @@ function mostrarLista(){
 }
 function toDoList(){
     const obj= new Tarea(inputTarea.value,inputPrioridad.value)
-    obj.agregarTarea(listaDeTareas,obj)
+    obj.agregarTarea(listaDeTareas)
+
+    //forma que me parecio mas simple (Didi):
+    // obj.agregarTarea(listaDeTareas,obj)
+
     mostrarLista()
 
     console.log(listaDeTareas);
